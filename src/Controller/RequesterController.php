@@ -9,7 +9,7 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class RequesterController extends AbstractController
 {
-    #[Route('/requester', name: 'app_requester')]
+    #[Route('/', name: 'app_requester')]
     public function index(): Response
     {
         $client = HttpClient::create();
