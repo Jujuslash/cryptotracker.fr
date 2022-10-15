@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="JS/script.js"></script>
+
+    <div class="title">
+        <h1>TOTAL</h1>
+    </div>
+    <div class="body">
+        {% for crypto in cryptos %}
+            <li>{{ crypto.name }}</li> /*Bitcoin*/
+        {% endfor %}
+    </div>
+    dump(crytpo.name);
+{% endblock %}

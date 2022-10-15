@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Welcome! Crypto Tracker{% endblock %}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ 'css/style.css' }}">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <style>
+
+        </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Akzidenz-Grotesk BQ&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    {#<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+     Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+        {% block stylesheets %}
+
+        {% endblock %}
+    </head>
+    <body>
+    {% block Navbar %}
+    <div class="navbar">
+        <div class="logo">
+            <a href="/">Crypto Tracker</a>
+        </div>
+        <div class="actions">
+            <div class="edit">
+                <a href="admin/">
+                    <svg <svg id="pencil" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 306.637 306.637">
+                        <g id="Groupe_1" data-name="Groupe 1">
+                            <path id="Tracé_1" data-name="Tracé 1" d="M12.809,238.52,0,306.637l68.118-12.809L252.395,109.551,197.086,54.242ZM60.79,279.943l-41.992,7.9,7.9-41.992L197.086,75.455l34.1,34.1Z"/>
+                            <path id="Tracé_2" data-name="Tracé 2" d="M251.329,0,209.822,41.507,265.13,96.815l41.507-41.507ZM231.035,41.507l20.294-20.294,34.1,34.095L265.13,75.6Z"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="add">
+                <a href="chart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 455 455">
+                        <g id="plus" transform="translate(-567 104)">
+                            <rect id="Rectangle_1" data-name="Rectangle 1" width="455" height="455" transform="translate(567 -104)" fill="#efefef"/>
+                            <path id="plus-2" data-name="plus" d="M0,0V455H455V0ZM358.865,242.635h-116.5v116.5h-30v-116.5H95.865v-30h116.5V96.137h30v116.5h116.5Z" transform="translate(567 -104)" fill="#100f0f"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {% block body %}
+            <div class="titlePage">
+                <h1>Crypto Tracker</h1>
+            </div>
+            <div class="body">
+                <p>
+                    Lorem ipsum dolor sit amet. Ea numquam tenetur At perferendis fuga ut enim ullam ea ipsam corrupti. Qui possimus iusto quo nostrum amet repellat consequatur in reiciendis ipsam sit quod corporis aut porro eligendi aut impedit aperiam! Aut harum doloribus non itaque esse ut rerum amet At perspiciatis aperiam ut voluptatem perspiciatis ad repudiandae tempora est repellat enim.
+                    Ex quia corporis ea quis adipisci rem numquam culpa ea velit dolorem eum quia explicabo in voluptatem rerum ab quod repellendus. Rem omnis fugiat sed error sapiente vel soluta dolorum.
+                    Eos officiis similique et odit corporis qui dicta quisquam ut rerum esse. Aut nostrum quia id nesciunt rerum et suscipit possimus eos nobis beatae? Eum repellendus aperiam qui dicta possimus cum officiis voluptatibus aut enim labore est ratione soluta eos animi voluptatem sed officiis beatae.
+                </p>
+            </div>
+
+    {% endblock %}
+    </body>
+</html>

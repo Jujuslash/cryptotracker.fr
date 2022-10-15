@@ -1,0 +1,7 @@
+<svg id="Composant_6_1" data-name="Composant 6 – 1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_1" data-name="Rectangle 1" width="11" height="11" transform="translate(13)" fill="#100f0f"/>
+  <rect id="Rectangle_2" data-name="Rectangle 2" width="11" height="11" fill="#100f0f"/>
+  <rect id="Rectangle_3" data-name="Rectangle 3" width="11" height="11" transform="translate(0 13)" fill="#100f0f"/>
+  <rect id="Rectangle_4" data-name="Rectangle 4" width="11" height="11" transform="translate(13 13)" fill="#100f0f"/>
+  <path id="plus-3" d="M13,2v9h9v2H13v9H11V13H2V11h9V2Zm2-2H9V9H0v6H9v9h6V15h9V9H15Z" fill="#100f0f"/>
+</svg>

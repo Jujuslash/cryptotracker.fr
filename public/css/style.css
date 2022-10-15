@@ -1,0 +1,58 @@
+body
+{
+    font-family: "roboto", sans-serif;
+    background-color: #100f0f;
+    color:#efefef;
+}
+
+a
+{
+    color: #efefef;
+    text-decoration:none;
+}
+
+a:hover
+{
+    color: #1fc36c;
+}
+
+.navbar
+{
+    display: flex; /* met sur la même ligne le titre avec bloc action (le crayon et le +) */
+    justify-content: space-between;
+    align-items: center; /* aligne le titre avec bloc action (le crayon et le +) */
+}
+
+.logo
+{
+    font-family: "Akzidenz-Grotesk BQ", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size:40px ;
+}
+
+.actions
+{
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* 1rem = 16px */ /* distance entre les elements sans utiliser margin et autre*/
+}
+
+.actions:hover
+{
+    color: #1fc36c;
+}
+
+
+
+.edit a svg
+{
+    fill: #efefef;
+}
+
+titlePage
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
