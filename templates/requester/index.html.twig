@@ -1,32 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RequesterController!{% endblock %}
-
+<head>
+{% block title %}Bienvenue sur CryptoTracker.fr{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{{ 'css/style.css' }}">
+{% endblock %}
+</head>
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ developer }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/xampp/apps/cryptotracker/src/Controller/RequesterController.php'|file_link(0) }}">src/Controller/RequesterController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/xampp/apps/cryptotracker/templates/requester/index.html.twig'|file_link(0) }}">templates/requester/index.html.twig</a></code></li>
-    </ul>
-</div>
     {% block data %}
-        <ul>
-            {% for money in cryptostemplate %}
-                <li>{{ money.name|e }}</li>
-                <li>{{ money.symbol|e }}</li>
-                <li><img src="{{ money.logo|e }}"></li>
-                <li>{{ money.description|e }}</li>
-                <li>{{ money.slug|e }}</li>
+        <li>
+            {% for moneyB in bitcoin_template %}
+                <p class="logo"><img src="{{ moneyB.logo|e }}"></p>
+                <p class="symb">{{ moneyB.symbol|e }}</p>
+                <p class="name">({{ moneyB.name|e }})</p>
             {% endfor %}
-        </ul>
+        </li>
+    {% endblock %}
+    {% block ethereum %}
+        <li>
+            {% for moneyE in ethereum_template %}
+                <p class="logo"><img src="{{ moneyE.logo|e }}"></p>
+                <p class="symb">{{ moneyE.symbol|e }}</p>
+                <p class="name">({{ moneyE.name|e }})</p>
+            {% endfor %}
+        </li>
+    {% endblock %}
+    {% block xrp %}
+          <li>
+            {% for moneyX in xrp_template %}
+                <p class="logo"><img src="{{ moneyX.logo|e }}"></p>
+                <p class="symb">{{ moneyX.symbol|e }}</p>
+                <p class="name">({{ moneyX.name|e }})</p>
+            {% endfor %}
+          </li>
+    {% endblock %}
 {% endblock %}
 
-{% endblock %}
