@@ -7,32 +7,65 @@
 {% endblock %}
 
 {% block body %}
+    {% block total %}
+        <H1>+ 2500 €</H1>
+    {% endblock %}
     {% block data %}
-        <li>
-            {% for moneyB in bitcoin_template %}
-                <p class="logo"><img src="{{ moneyB.logo|e }}"></p>
-                <p class="symb">{{ moneyB.symbol|e }}</p>
-                <p class="name">({{ moneyB.name|e }})</p>
-            {% endfor %}
-        </li>
+        <div class="currency">
+            <div class="text">
+                {% for moneyB in bitcoin_template %}
+                    <div class="image-container"><img src="{{ moneyB.logo|e }}"></div>
+                    <p class="symb"><strong>{{ moneyB.symbol|e }}</strong></p>
+                    <p>({{ moneyB.name|e }})</p>
+                {% endfor %}
+            </div>
+            <div class="arrow">
+                <div class="image-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="273.066" height="273.101" viewBox="0 0 273.066 273.101">
+                        <path id="Tracé_41" data-name="Tracé 41" d="M260.991,240.493a8.25,8.25,0,0,0-11.947,0l-128,119.467a7.745,7.745,0,0,0-2.56,5.973V502.466c0,3.413,1.707,6.827,5.12,7.68a7.79,7.79,0,0,0,9.387-1.707L255.018,386.412,377.044,508.44a7.745,7.745,0,0,0,5.973,2.56c.853,0,2.56,0,3.413-.853,3.413-.853,5.12-4.267,5.12-7.68V365.933a9.214,9.214,0,0,0-2.56-5.973ZM374.484,481.987,260.991,368.493a8.248,8.248,0,0,0-11.946,0L135.551,481.987V369.347L255.018,258.414,374.485,369.347v112.64Z" transform="translate(-118.484 -237.933)" fill="#efefef"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="273.066" height="273.101" viewBox="0 0 273.066 273.101">
+                        <path id="Tracé_41" data-name="Tracé 41" d="M260.991,240.493a8.25,8.25,0,0,0-11.947,0l-128,119.467a7.745,7.745,0,0,0-2.56,5.973V502.466c0,3.413,1.707,6.827,5.12,7.68a7.79,7.79,0,0,0,9.387-1.707L255.018,386.412,377.044,508.44a7.745,7.745,0,0,0,5.973,2.56c.853,0,2.56,0,3.413-.853,3.413-.853,5.12-4.267,5.12-7.68V365.933a9.214,9.214,0,0,0-2.56-5.973ZM374.484,481.987,260.991,368.493a8.248,8.248,0,0,0-11.946,0L135.551,481.987V369.347L255.018,258.414,374.485,369.347v112.64Z" transform="translate(-118.484 -237.933)" fill="#efefef"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
     {% endblock %}
     {% block ethereum %}
-        <li>
-            {% for moneyE in ethereum_template %}
-                <p class="logo"><img src="{{ moneyE.logo|e }}"></p>
-                <p class="symb">{{ moneyE.symbol|e }}</p>
-                <p class="name">({{ moneyE.name|e }})</p>
-            {% endfor %}
-        </li>
+        <div class="currency">
+            <div class="text">
+                {% for moneyE in ethereum_template %}
+                    <div class="image-container"><img src="{{ moneyE.logo|e }}"></div>
+                    <p class="symb"><strong>{{ moneyE.symbol|e }}</strong></p>
+                    <p>({{ moneyE.name|e }})</p>
+                {% endfor %}
+            </div>
+            <div class="arrow">
+                <div class="image-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="273.066" height="273.101" viewBox="0 0 273.066 273.101">
+                        <path id="Tracé_41" data-name="Tracé 41" d="M260.991,240.493a8.25,8.25,0,0,0-11.947,0l-128,119.467a7.745,7.745,0,0,0-2.56,5.973V502.466c0,3.413,1.707,6.827,5.12,7.68a7.79,7.79,0,0,0,9.387-1.707L255.018,386.412,377.044,508.44a7.745,7.745,0,0,0,5.973,2.56c.853,0,2.56,0,3.413-.853,3.413-.853,5.12-4.267,5.12-7.68V365.933a9.214,9.214,0,0,0-2.56-5.973ZM374.484,481.987,260.991,368.493a8.248,8.248,0,0,0-11.946,0L135.551,481.987V369.347L255.018,258.414,374.485,369.347v112.64Z" transform="translate(-118.484 -237.933)" fill="#efefef"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
     {% endblock %}
     {% block xrp %}
-          <li>
+      <div class="currency">
+        <div class="text">
             {% for moneyX in xrp_template %}
-                <p class="logo"><img src="{{ moneyX.logo|e }}"></p>
-                <p class="symb">{{ moneyX.symbol|e }}</p>
-                <p class="name">({{ moneyX.name|e }})</p>
+              <div class="image-container"><img src="{{ moneyX.logo|e }}"></div>
+                <p class="symb"><strong>{{ moneyX.symbol|e }}</strong></p>
+                <p>({{ moneyX.name|e }})</p>
             {% endfor %}
-          </li>
+        </div>
+        <div class="arrow">
+            <div class="image-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="273.066" height="273.101" viewBox="0 0 273.066 273.101">
+                    <path id="Tracé_39" data-name="Tracé 39" d="M260.991,240.493a8.25,8.25,0,0,0-11.947,0l-128,119.467a7.745,7.745,0,0,0-2.56,5.973V502.466c0,3.413,1.707,6.827,5.12,7.68a7.79,7.79,0,0,0,9.387-1.707L255.018,386.412,377.044,508.44a7.745,7.745,0,0,0,5.973,2.56c.853,0,2.56,0,3.413-.853,3.413-.853,5.12-4.267,5.12-7.68V365.933a9.214,9.214,0,0,0-2.56-5.973ZM374.484,481.987,260.991,368.493a8.248,8.248,0,0,0-11.946,0L135.551,481.987V369.347L255.018,258.414,374.485,369.347v112.64Z" transform="translate(391.55 511.034) rotate(180)" fill="#efefef"/>
+                </svg>
+            </div>
+        </div>
+      </div>
     {% endblock %}
 {% endblock %}
 
