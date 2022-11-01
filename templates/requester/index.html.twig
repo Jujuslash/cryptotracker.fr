@@ -14,7 +14,11 @@
         <div class="currency">
             <div class="text">
                 {% for moneyB in bitcoin_template %}
-                    <div class="image-container"><img src="{{ moneyB.logo|e }}"></div>
+                    <div class="image-container">
+                        <a href="/bit_graph">
+                            <img src="{{ moneyB.logo|e }}">
+                        </a>
+                    </div>
                     <p class="symb"><strong>{{ moneyB.symbol|e }}</strong></p>
                     <p>({{ moneyB.name|e }})</p>
                 {% endfor %}
@@ -35,7 +39,11 @@
         <div class="currency">
             <div class="text">
                 {% for moneyE in ethereum_template %}
-                    <div class="image-container"><img src="{{ moneyE.logo|e }}"></div>
+                    <div class="image-container">
+                        <a href="/ether_graph">
+                            <img src="{{ moneyE.logo|e }}">
+                        </a>
+                    </div>
                     <p class="symb"><strong>{{ moneyE.symbol|e }}</strong></p>
                     <p>({{ moneyE.name|e }})</p>
                 {% endfor %}
@@ -53,7 +61,11 @@
       <div class="currency">
         <div class="text">
             {% for moneyX in xrp_template %}
-              <div class="image-container"><img src="{{ moneyX.logo|e }}"></div>
+              <div class="image-container">
+                  <a href="/xrp_graph">
+                    <img src="{{ moneyX.logo|e }}">
+                  </a>
+              </div>
                 <p class="symb"><strong>{{ moneyX.symbol|e }}</strong></p>
                 <p>({{ moneyX.name|e }})</p>
             {% endfor %}

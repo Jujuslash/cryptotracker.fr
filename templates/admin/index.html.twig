@@ -5,11 +5,11 @@
 {% block body %}
 <h1>Modifier un montant</h1>
 
+{{ form_start(form) }}
 <div class="edit">
-    <div>
-        <div class="curr">
-            <div class="image-container">
-                <svg xmlns="http://www.w3.org/2000/svg" width="512" height="511.985" viewBox="0 0 512 511.985">
+    <div class="curr">
+        <div class="image-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="511.985" viewBox="0 0 512 511.985">
                 <g id="Groupe_57" data-name="Groupe 57" transform="translate(0 -0.008)">
                     <g id="Groupe_56" data-name="Groupe 56">
                         <path id="Tracé_29" data-name="Tracé 29" d="M270.566,104.909A8.532,8.532,0,0,0,258.5,116.975l34.133,34.133A8.532,8.532,0,0,0,304.7,139.042Z" fill="#efefef"/>
@@ -20,14 +20,14 @@
                     </g>
                 </g>
             </svg>
-            </div>
-            <div class="text">
-                <p>BTC (Bitcoin)</p>
-            </div>
         </div>
-        <div class="qty">
-            <div class="image-container">
-                <svg xmlns="http://www.w3.org/2000/svg" width="512" height="344.436" viewBox="0 0 512 344.436">
+        <div class="text">
+            {{ form_widget(form.crypto, { 'attr': {'class': 'field'} }) }}
+        </div>
+    </div>
+    <div class="qty">
+        <div class="image-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="344.436" viewBox="0 0 512 344.436">
                 <g id="coin-cash" transform="translate(0 -83.782)">
                     <g id="Groupe_2" data-name="Groupe 2">
                         <g id="Groupe_1" data-name="Groupe 1">
@@ -166,15 +166,14 @@
                     </g>
                 </g>
             </svg>
-            </div>
-            <div class="text">
-                <p>0.001</p>
-            </div>
+        </div>
+        <div class="text">
+            {{ form_widget(form.quantity, { 'attr': {'class': 'field'} }) }}
         </div>
     </div>
-
     <div class="button">
-        <input type="button" value="VALIDER">
+        {{ form_widget(form.submit, { 'attr': {'class': 'ajouter'} }) }}
     </div>
 </div>
+{{ form_end(form) }}
 {% endblock %}

@@ -3,7 +3,10 @@
 {% block title %}Adding page{% endblock %}
 
 {% block body %}
-        <h1>Ajouter une transaction</h1>
+
+<h1>Ajouter une transaction</h1>
+
+{{ form_start(form) }}
 <div class="add">
     <div class="crypto">
         <div class="image-container">
@@ -22,7 +25,7 @@
             </svg>
         </div>
         <div class="text">
-            <p>Sélectionnre une crypto</p>
+            {{ form_widget(form.crypto, { 'attr': {'class': 'field'} }) }}
         </div>
     </div>
     <div class="qté">
@@ -168,7 +171,7 @@
             </svg>
         </div>
         <div class="text">
-            <p>Quantité</p>
+            {{ form_widget(form.quantity, { 'attr': {'class': 'field'} }) }}
         </div>
     </div>
     <div class="price">
@@ -182,12 +185,14 @@
             </svg>
         </div>
         <div class="text">
-            <p>Prix d'achat</p>
+            {{ form_widget(form.price, { 'attr': {'class': 'field'} }) }}
         </div>
     </div>
     <div class="button">
-        <input type="button" value="AJOUTER">
+        {{ form_widget(form.submit, { 'attr': {'class': 'ajouter'} }) }}
     </div>
 </div>
-
+{{ form_end(form) }}
+    <script src="{{ 'JS/script.js' }}"></script>
 {% endblock %}
+

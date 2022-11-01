@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chart Page{% endblock %}
+
+{% block body %}
+    <body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const labels = {{ xrp_time|json_encode|e }} ;
+        const data =
+            {
+                labels: labels,
+                datasets:
+                    [{
+                        label: 'Ripple',
+                        backgroundColor: '#1fc36c',
+                        borderColor: '#1fc36c',
+                        data: {{ xrp_data|json_encode|e }},
+                        tension: 0.5
+                    }]
+            };
+        const config =
+            {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    scales:{
+                        y:{
+                            beginAtZero: true,
+                            min: 0.45,
+                            max: 0.8
+                        }
+                    }
+                }
+            };
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+    </body>
+{% endblock %}
