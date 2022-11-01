@@ -6472,6 +6472,6 @@
         "composer-plugin-api": "^2.1",
         "composer-runtime-api": ">=2.1"
     },
-    "platform-dev": [],
+     "platform-dev": [],
     "plugin-api-version": "2.3.0"
 }
