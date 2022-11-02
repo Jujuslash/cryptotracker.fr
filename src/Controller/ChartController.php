@@ -11,12 +11,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Historique;
+use App\Repository\HistoriqueRepository;
 
 class ChartController extends AbstractController
 {
     #[Route('/add', name: 'app_add')]
-    public function index(Request $request, CryptoRepository $cryptoRepository, EntityManagerInterface $entityManager): Response
+    public function index(Request $request,HistoriqueRepository $historiqueRepository, CryptoRepository $cryptoRepository, EntityManagerInterface $entityManager): Response
     {
+        $historique = new Historique();
+        $crypto = new Crypto();
         $client1 = HttpClient::create();
         $response = $client1->request('GET', 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', [
             'headers' =>
@@ -31,20 +35,23 @@ class ChartController extends AbstractController
                 ],
         ]);
         $fullList = $response->toArray()['data'];
-
-        $crypto = new Crypto();
         $form = $this->createForm(AddType::class, $crypto);
 
         $form->handleRequest($request);
-
         if($form->isSubmitted()&& $form->isValid())
         {
             $data = $form->getData(); // une fois le formulaire submit on recupere ce quil y a dans data
-            $priceData = $data->getPrice();
+
             $quantityData = $data->getQuantity();
             $cryptoData = $data->getCrypto();
             $cryptoRepo = $cryptoRepository->findBy(['crypto' => $cryptoData]);
-            $cryptoRepo[0]->setQuantity($quantityData);
+            $total = $historiqueRepository->findLastDate();
+            $totalCrypto = $cryptoRepo[0]->getPrice();
+            //var_dump($total[0]->getTotal());
+            $totalTotal = $total[0]->getTotal();
+            $qtyCrypto = $cryptoRepo[0]->getQuantity();
+            $cryptoRepo[0]->setQuantity($quantityData+$qtyCrypto);
+
             if ($cryptoData === 'Ripple')
             {
                 $cryptoData= 'XRP';
@@ -52,9 +59,10 @@ class ChartController extends AbstractController
             $key = array_search($cryptoData, array_column($fullList, 'name'));
             $unitPrice = $fullList[$key]['quote']['EUR']['price'];
             $totalPrice = $unitPrice*$quantityData;
-            $cryptoRepo[0]->setPrice($totalPrice);
+            $cryptoRepo[0]->setPrice($totalPrice+$totalCrypto);
+            $historique->setTotal($totalPrice+$totalTotal);
+            $entityManager->persist($historique);
             $entityManager->flush();
-            //var_dump($cryptoRepo);
         }
 
         return $this->render('chart/index.html.twig',[

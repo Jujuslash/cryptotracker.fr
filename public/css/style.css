@@ -152,6 +152,7 @@ h1
 {
     width: 200px;
     height: 40px;
+
 }
 
 .edit .text .field
@@ -161,6 +162,7 @@ h1
     object-fit: cover;
     font-size: 30px;
     padding-left: 10px;
+    font-family: "roboto", sans-serif;
 }
 
 .edit .qty
@@ -194,6 +196,7 @@ h1
     left:100px;
     background-color: #36393e;
     border-color: #36393e;
+    font-family: "roboto", sans-serif;
 }
 
 /* -------------- page Plus + -------------- */
@@ -232,6 +235,7 @@ h1
     object-fit: cover;
     font-size: 30px;
     padding-left: 10px;
+    font-family: "roboto", sans-serif;
 }
 
 .add .qté
@@ -285,4 +289,5 @@ h1
     left:100px;
     background-color: #36393e;
     border-color: #36393e;
+    font-family: "roboto", sans-serif;
 }

@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Crypto;
+use App\Entity\Historique;
 use App\Form\AdminType;
 use App\Repository\CryptoRepository;
+use App\Repository\HistoriqueRepository;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,8 +17,9 @@ use Doctrine\ORM\EntityManagerInterface;
 class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
-    public function index(Request $request, CryptoRepository $cryptoRepository, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, HistoriqueRepository $historiqueRepository, CryptoRepository $cryptoRepository, EntityManagerInterface $entityManager): Response
     {
+        $historique = new Historique();
         $crypto = new Crypto();
         $form = $this->createForm(AdminType::class, $crypto);
 
@@ -28,7 +31,11 @@ class AdminController extends AbstractController
             $quantityData = $data->getQuantity();
             $cryptoData = $data->getCrypto();
             $cryptoRepo = $cryptoRepository->findBy(['crypto' => $cryptoData]);
-            $cryptoRepo[0]->setQuantity($quantityData);
+            $total = $historiqueRepository->findLastDate();
+            $totalCrypto = $cryptoRepo[0]->getPrice();
+            $totalTotal = $total[0]->getTotal();
+            $qtyCrypto = $cryptoRepo[0]->getQuantity();
+            $cryptoRepo[0]->setQuantity($qtyCrypto-$quantityData);
             $client1 = HttpClient::create();
             $response = $client1->request('GET', 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', [
                 'headers' =>
@@ -50,9 +57,11 @@ class AdminController extends AbstractController
             $key = array_search($cryptoData, array_column($fullList, 'name'));
             $unitPrice = $fullList[$key]['quote']['EUR']['price'];
             $totalPrice = $unitPrice*$quantityData;
-            $cryptoRepo[0]->setPrice($totalPrice);
+            $cryptoRepo[0]->setPrice($totalCrypto-$totalPrice);
+            $historique->setTotal($totalTotal-$totalPrice);
+            $entityManager->persist($historique);
             $entityManager->flush();
-            //var_dump($cryptoRepo);
+
         }
 
         return $this->render('admin/index.html.twig',[

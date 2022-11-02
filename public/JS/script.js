@@ -8,47 +8,27 @@ addQuantity.addEventListener('change', changeQuantity);
 
 let unitPrice = 0;
 
-function changeCrypto()
+function changeCrypto(event)
 {
-     fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
-        headers: {
-            'X-CMC_PRO_API_KEY': '904d0623-35e7-4ef2-8c5a-d4b453c7b78b',
-            'content-type' : 'application/json',
-            'Access-Control-Request-Headers' : 'Content-Type',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'Content-Type, Accept, Origin, Authorization',
-            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-
-        },
-    })
-     .then(response =>
-         console.log(response))
-
-       .then(data=>
-            console.log(data)
-        )
-        .catch((error)=>{
-            console.error(error);
-        })
+    unitPrice = event.target.options[event.target.selectedIndex].dataset.price
+    console.log(unitPrice)
+    if(addCrypto.value !== '' && addQuantity.value !== '')
+    {
+        addPrice.value = (unitPrice*addQuantity.value).toFixed(2)
+    }
 };
 
 function changeQuantity()
 {
-console.log('qauntité modifiée')
+    if(addCrypto.value!=='')
+    {
+        if(unitPrice!==0)
+        {
+            addPrice.value = (unitPrice*addQuantity.value).toFixed(2)
+        }else{
+            addPrice.value = unitPrice.toFixed(2)
+        }
+
+    }
+    console.log('qauntité modifiée')
 };
-
-
-// avant -------------------
-/*const request = fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest');
-
-resquest .then((response) => {
-    console.log(response);
-    const data = response.json(); /*si revoie du json ou response.text(); sur l'API renvoie du txt
-
-    data.then((jsonData)=>{
-        console.log(jsonData);
-    });
-})
-.catch((error)=>{
-    console.error(error);
-})*/

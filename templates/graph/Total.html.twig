@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fortune Page{% endblock %}
+
+{% block body %}
+    <body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const labels = {{total_time|json_encode|e}}
+        const data =
+            {
+                labels: labels,
+                datasets:
+                    [{
+                        label: 'Total',
+                        backgroundColor: '#1fc36c',
+                        borderColor: '#1fc36c',
+                        data: {{total_data|json_encode|e}},
+                        tension: 0.5,
+                    }]
+            };
+        const config =
+            {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    scales:{
+                        y:{
+                            beginAtZero: true,
+
+                        }
+                    }
+                }
+            };
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+    </body>
+{% endblock %}
