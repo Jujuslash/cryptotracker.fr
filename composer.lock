@@ -6306,7 +6306,7 @@
                 "symfony/deprecation-contracts": "^2.2|^3",
                 "symfony/filesystem": "^5.4.7|^6.0",
                 "symfony/finder": "^5.4.3|^6.0",
-                "symfony/framework-bundle": "^5.4.7|^6.0",
+                "symfony/framework-bundle": "^5.4.7|^6.1.7",
                 "symfony/http-kernel": "^5.4.7|^6.0"
             },
             "conflict": {
@@ -6469,7 +6469,7 @@
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-iconv": "*",
-        "composer-plugin-api": "^2.1",
+        "composer-plugin-api": ">=2.1",
         "composer-runtime-api": ">=2.1"
     },
      "platform-dev": [],
