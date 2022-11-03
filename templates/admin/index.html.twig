@@ -171,6 +171,13 @@
             {{ form_widget(form.quantity, { 'attr': {'class': 'field'} }) }}
         </div>
     </div>
+
+        {% for flash_message in app.session.flashBag.get('success') %}
+        <p class="text-success">
+            {{ flash_message }}
+        </p>
+        {% endfor %}
+
     <div class="button">
         {{ form_widget(form.submit, { 'attr': {'class': 'ajouter'} }) }}
     </div>

@@ -9,7 +9,7 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class RequesterController extends AbstractController
 {
-    #[Route('/', name: 'app_requester')]
+    #[Route('/h', name: 'app_requester')]
     public function bitcoin(): Response
     {
         $client1 = HttpClient::create();

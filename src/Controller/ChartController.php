@@ -27,6 +27,7 @@ class ChartController extends AbstractController
                 [
                     'content-type' => 'application/json',
                     'X-CMC_PRO_API_KEY' => '904d0623-35e7-4ef2-8c5a-d4b453c7b78b'
+
                 ],
             'query' =>
                 [
@@ -63,6 +64,7 @@ class ChartController extends AbstractController
             $historique->setTotal($totalPrice+$totalTotal);
             $entityManager->persist($historique);
             $entityManager->flush();
+            $this->addFlash('success', 'La modification a bien été prise en compte');
         }
 
         return $this->render('chart/index.html.twig',[

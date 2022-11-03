@@ -17,6 +17,13 @@ a
     text-decoration:none;
 }
 
+p
+{
+    color: #1fc36c;
+    text-align: center;
+    justify-content: center;
+}
+
 a:hover
 {
     color: #1fc36c;

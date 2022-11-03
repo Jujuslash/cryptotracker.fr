@@ -18,6 +18,7 @@
         "symfony/asset": "6.1.*",
         "symfony/browser-kit": "6.1.*",
         "symfony/console": "6.1.*",
+        "symfony/dom-crawler": "6.1.*",
         "symfony/dotenv": "6.1.*",
         "symfony/flex": "^2",
         "symfony/form": "6.1.*",
@@ -93,6 +94,7 @@
         "phpunit/phpunit": "^9.5",
         "symfony/css-selector": "6.1.*",
         "symfony/maker-bundle": "^1.47",
+        "symfony/panther": "^2.0",
         "symfony/phpunit-bridge": "^6.1"
     }
 }

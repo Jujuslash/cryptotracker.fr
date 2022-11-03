@@ -61,7 +61,7 @@ class AdminController extends AbstractController
             $historique->setTotal($totalTotal-$totalPrice);
             $entityManager->persist($historique);
             $entityManager->flush();
-
+            $this->addFlash('success', 'La modification a bien été prise en compte');
         }
 
         return $this->render('admin/index.html.twig',[
