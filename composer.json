@@ -8,11 +8,11 @@
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-iconv": "*",
-        "composer-plugin-api": "2.*",
-        "composer-runtime-api": "2.*",
+        "composer-plugin-api": "2.1",
+        "composer-runtime-api": "2.1",
         "doctrine/dbal": "^3.5",
-        "doctrine/doctrine-bundle": "2.7.x-dev",
-        "doctrine/doctrine-migrations-bundle": "3.2.x-dev",
+        "doctrine/doctrine-bundle": "^2.7",
+        "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.13",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "6.1.*",
@@ -22,7 +22,7 @@
         "symfony/dotenv": "6.1.*",
         "symfony/flex": "^2",
         "symfony/form": "6.1.*",
-        "symfony/framework-bundle": "6.1.x-dev",
+        "symfony/framework-bundle": "6.1.*",
         "symfony/http-client": "6.1.*",
         "symfony/polyfill-ctype": "^1.8",
         "symfony/polyfill-php80": "^1.25.0",
@@ -93,7 +93,6 @@
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "symfony/css-selector": "6.1.*",
-        "symfony/maker-bundle": "^v1.47.0",
         "symfony/panther": "^2.0",
         "symfony/phpunit-bridge": "^6.1"
     }
