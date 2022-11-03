@@ -22,7 +22,7 @@
         "symfony/dotenv": "6.1.*",
         "symfony/flex": "^2",
         "symfony/form": "6.1.*",
-        "symfony/framework-bundle": "6.1.*",
+        "symfony/framework-bundle": "6.1.x-dev",
         "symfony/http-client": "6.1.*",
         "symfony/polyfill-ctype": "^1.8",
         "symfony/polyfill-php80": "^1.25.0",
