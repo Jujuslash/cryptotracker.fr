@@ -10,7 +10,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const labels = {{ xrp_time|json_encode|e }} ;
+        const labels = {{ bitcoin_time|json_encode|e }} ;
         const data =
             {
                 labels: labels,
@@ -19,7 +19,7 @@
                         label: 'Ripple',
                         backgroundColor: '#1fc36c',
                         borderColor: '#1fc36c',
-                        data: {{ xrp_data|json_encode|e }},
+                        data: {{ bitcoin_data|json_encode|e }},
                         tension: 0.5
                     }]
             };
