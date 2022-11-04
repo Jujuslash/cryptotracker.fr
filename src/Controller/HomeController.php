@@ -13,7 +13,8 @@ class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
     public function bitcoin(CryptoRepository $cryptoRepository, HistoriqueRepository $historiqueRepository): Response
-    {
+    {   /* --------------- Bitcoin ------------------------*/
+
         $client1 = HttpClient::create();
         $response = $client1->request('GET', 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=1',
          [
@@ -25,6 +26,8 @@ class HomeController extends AbstractController
         ]);
         $bitcoin = $response->toArray()["data"];
 
+        /* --------------- Ethereum ------------------------*/
+
        $client2 = HttpClient::create();
         $response2 = $client2->request('GET', 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=1027', [
             'headers' => [
@@ -33,9 +36,8 @@ class HomeController extends AbstractController
             ],
         ]);
         $ethereum = $response2->toArray()["data"];
-        /* return $cryptos;*/
 
-
+        /* --------------- Ripple ------------------------*/
 
         $client3 = HttpClient::create();
         $response3 = $client3->request('GET', 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=52', [
@@ -45,7 +47,8 @@ class HomeController extends AbstractController
             ],
          ]);
         $xrp = $response3->toArray()["data"];
-        /* return $cryptos;*/
+
+        /* --------------- Menu déroulant -----------------------*/
 
         $client = HttpClient::create();
         $response = $client->request('GET', 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', [
