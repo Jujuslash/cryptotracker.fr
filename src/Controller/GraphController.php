@@ -31,12 +31,12 @@ class GraphController extends AbstractController
     public function bitcoin(): Response
     {
         $client1 = HttpClient::create();
-        $response = $client1->request('GET', 'https://rest.coinapi.io/v1/quotes/BITSTAMP_SPOT_BTC_EUR/history?time_start=2022-10-01T00:00:00',
+        $response = $client1->request('GET', 'https://rest.coinapi.io/v1/quotes/BITSTAMP_SPOT_BTC_EUR/history?time_start=2022-10-08T00:00:00',
         [
             'headers' =>
             [
                 'content-type' => 'application/json',
-                'X-CoinAPI-KEY' => 'F40F3041-4D1B-4DB0-9D66-CA263E76BDAB'
+                'X-CoinAPI-KEY' => 'BB684089-080B-4D01-97AC-AEE16C2FA8BF'
             ],
         ]);
         //var_dump($response);
@@ -87,7 +87,7 @@ class GraphController extends AbstractController
     public function xrp(): Response
     {
         $client3 = HttpClient::create();
-        $response = $client3->request('GET', 'https://rest.coinapi.io/v1/quotes/bitstamp_SPOT_eth_eur/history?time_start=2022-10-11T00:00:00',
+        $response = $client3->request('GET', 'https://rest.coinapi.io/v1/quotes/bitstamp_SPOT_xrp_eur/history?time_start=2022-10-11T00:00:00',
             [
                 'headers' =>
                 [
