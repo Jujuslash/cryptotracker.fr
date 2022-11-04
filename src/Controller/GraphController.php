@@ -36,7 +36,7 @@ class GraphController extends AbstractController
             'headers' =>
             [
                 'content-type' => 'application/json',
-                'X-CoinAPI-Key' => 'D02ABC13-B3C3-4612-9919-219864732C50'
+                'X-CoinAPI-KEY' => 'F40F3041-4D1B-4DB0-9D66-CA263E76BDAB'
             ],
         ]);
         //var_dump($response);
