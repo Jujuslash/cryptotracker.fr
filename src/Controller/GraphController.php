@@ -36,10 +36,10 @@ class GraphController extends AbstractController
             'headers' =>
             [
                 'content-type' => 'application/json',
-                'X-CoinAPI-KEY' => 'A8233631-083A-4F54-B052-9F2CE2F1B27F'
+                'X-CoinAPI-Key' => 'D02ABC13-B3C3-4612-9919-219864732C50'
             ],
         ]);
-
+        //var_dump($response);
         $tab = [];
         $tabx =[];
         $i=0;
@@ -64,7 +64,7 @@ class GraphController extends AbstractController
                 'headers' =>
                     [
                         'content-type' => 'application/json',
-                        'X-CoinAPI-KEY' => 'A8233631-083A-4F54-B052-9F2CE2F1B27F'
+                        'X-CoinAPI-KEY' => 'BB684089-080B-4D01-97AC-AEE16C2FA8BF'
                     ],
             ]);
         $tabeth = [];
@@ -92,7 +92,7 @@ class GraphController extends AbstractController
                 'headers' =>
                 [
                     'content-type' => 'application/json',
-                    'X-CoinAPI-KEY' => 'A8233631-083A-4F54-B052-9F2CE2F1B27F'
+                    'X-CoinAPI-KEY' => 'BB684089-080B-4D01-97AC-AEE16C2FA8BF'
                 ],
             ]);
         # https://www.coingecko.com/fr/api/documentation
